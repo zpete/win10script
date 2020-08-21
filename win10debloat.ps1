@@ -30,11 +30,11 @@ $tweaks = @(
 	"RequireAdmin",
 
 	### External Program Setup
-	"InstallTitusProgs", #REQUIRED FOR OTHER PROGRAM INSTALLS!
-	"InstallAdobe",
+	"InstallTitusProgs", #REQUIRED FOR OTHER PROGRAM INSTALLS!	
 	"Install7Zip",
 	"InstallNotepadplusplus",
 	"InstallMediaPlayerClassic",
+	"InstallPeteStuff",
 
 	### Windows Apps
 	"DebloatAll",
@@ -183,7 +183,7 @@ $tweaks = @(
 
 	### Auxiliary Functions ###
 	"WaitForKey"
-	"Restart"
+	#"Restart"
 )
 
 #########
@@ -199,11 +199,6 @@ Function InstallTitusProgs {
 	Start-BitsTransfer -Source "https://raw.githubusercontent.com/ChrisTitusTech/win10script/master/ooshutup10.cfg" -Destination ooshutup10.cfg
 	Start-BitsTransfer -Source "https://dl5.oo-software.com/files/ooshutup10/OOSU10.exe" -Destination OOSU10.exe
 	./OOSU10.exe ooshutup10.cfg /quiet
-}
-
-Function InstallAdobe {
-	Write-Output "Installing Adobe Acrobat Reader"
-	choco install adobereader -y
 }
 
 Function InstallJava {
@@ -224,6 +219,23 @@ Function InstallNotepadplusplus {
 Function InstallMediaPlayerClassic {
 	Write-Output "Installing Media Player Classic (VLC Alternative)"
 	choco install mpc-hc -y
+}
+
+Function InstallPeteStuff {
+	Write-Output "Installing Petes tools"
+	choco install jetbrains-rider -y
+	choco install jetbrainstoolbox -y
+	choco install aimp -y
+	choco install winrar -y
+	choco install git -y
+	choco install tortoisegit -y
+	choco install sublimetext3 -y
+	choco install sublimemerge -y
+	choco install microsoft-windows-terminal -y
+	choco install listary -y
+	choco install vscode -y
+	choco install foobar2000 -y
+	choco install sumatrapdf -y
 }
 
 ##########
@@ -2556,7 +2568,7 @@ Function DebloatAll {
         "*Flipboard*"
         "*Twitter*"
         "*Facebook*"
-        "*Spotify*"
+        #"*Spotify*"
         "*Royal Revolt*"
         "*Sway*"
         "*Speed Test*"
